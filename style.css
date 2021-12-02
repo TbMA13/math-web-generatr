@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Google_sans;
+    src: url(fonts/GoogleSans-Regular.ttf);
+    font-family: Google_sans_bold;
+    src: url(fonts/GoogleSans-Bold.ttf);
+    font-family: Google_sans_italic;
+    src: url(fonts/GoogleSans-Italic.ttf);
+}
+
+* {
+    font-family: Google_sans, Arial, Helvetica, sans-serif;
+    border: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Google_sans_bold, Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #7CF571;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#container {
+    width: 90%;
+    height: 92%;
+    border-radius: 90px;
+    background: #ffffff;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#block {
+    width: calc(100% - 90px);
+    height: calc(100% - 90px);
+}
