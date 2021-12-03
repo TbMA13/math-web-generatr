@@ -13,12 +13,6 @@
     margin: 0;
 }
 
-h1,
-h2,
-h3 {
-    font-family: Google_sans_bold, Arial, Helvetica, sans-serif;
-}
-
 body {
     position: absolute;
     width: 100%;
@@ -30,6 +24,17 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+h1,
+h2,
+h3 {
+    font-family: Google_sans_bold, Arial, Helvetica, sans-serif;
+}
+
+#HelloTitlle {
+    font-size: 40px;
+}
+
 
 #container {
     width: 90%;
@@ -45,5 +50,55 @@ body {
 
 #block {
     width: calc(100% - 90px);
-    height: calc(100% - 90px);
+    height: calc(100% - 70px);
+}
+
+#ChangeParameters {
+    margin: 3px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: burlywood; */
+}
+
+#ChangeNumbersSize {
+    height: 35px;
+    margin: 15px 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+#ChangeNumbersSize input {
+    height: 28px;
+    width: 70px;
+    margin: 0 5px;
+
+    padding: 0 7px;
+    
+    color: #1B7513;
+    background: rgba(124, 245, 113, 0.3);
+
+    border-radius: 22px;
+    font-size: 20px;
+    border: 2px solid #25DF14;
+}
+
+#ChangeNumbersSize input:focus {
+    background: rgba(124, 245, 113, 0.55);
+    outline: none;
+    border: 3px solid #25DF14;
+}
+
+#ChangeNumbersSize p {
+    font-size: 25px;
+}
+
+#FullScreen {
+    cursor: pointer;
 }
