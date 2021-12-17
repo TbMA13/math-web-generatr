@@ -1,9 +1,10 @@
 const elem = document.documentElement;
+let correctly;
 window.onload = function () {
     let data = new Date;
     let hours = data.getHours();
     let helloText = document.getElementById("HelloTitlle");
-    
+
     if (4 <= (hours) & (hours) <= 8) {
         helloText.innerHTML = 'Доброе утро!';
     } else if (9 <= hours & hours <= 17) {
@@ -16,18 +17,29 @@ window.onload = function () {
 }
 
 
-
 function FullScreen(element) {
-
-    if (element.requestFullscreen) {
-        element.requestFullscreen();
-    } else if (element.webkitrequestFullscreen) {
-        element.webkitRequestFullscreen();
-    } else if (element.mozRequestFullscreen) {
-        element.mozRequestFullScreen();
+    if (ChangeNumbersSize() && ChangeActions) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.webkitrequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.mozRequestFullscreen) {
+            element.mozRequestFullScreen();
+        }
     }
 }
 
-function InputErrors() {
-    return 0
+function MultiTable() {
+
+}
+
+function ChangeNumbersSize() {
+    if (((document.getElementById('FirstNumber').value) > (document.getElementById('LastNumber').value))){
+        console.log('Диапазон неверный')
+    }
+    return ((document.getElementById('FirstNumber').value) <= (document.getElementById('LastNumber').value));
+}
+function ChangeActions() {
+    let temp = document.getElementsByClassName('Action')
+    console.log(temp)
 }

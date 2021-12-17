@@ -13,18 +13,19 @@
     <div id="container">
         <div id="block">
             <h1 id="HelloTitlle"></h1>
+            <input id="MultiTable" type="button" value="Таблица умножения"></input>
             <div id="ChangeParameters">
                 <h2>Выбор параметров генератора</h2>
                 <form>
                     <div id="ChangeNumbersSize">
                         <p>Диапазон от</p>
-                        <input autofocus type="text">
+                        <input id="FirstNumber" autofocus type="text">
                         <p>и до</p>
-                        <input type="text">
+                        <input id="LastNumber" type="text">
                     </div>
                     <div id='ChangeActions'>
                         <p>Допустимы следующие действия:</p>
-                        <input id="add" type="checkbox" class="Action">
+                        <input  id="add" type="checkbox" class="Action">
                         <label for="add">Сложение</label>
                         <input id="sub" type="checkbox" class="Action">
                         <label for="sub">Вычитание</label>
@@ -35,16 +36,19 @@
                     </div>
                     <div id="CountActions">
                         <p>Количество действий в примерах:</p>
+                        <input style="margin-top: 3px;" type="text" id="CountActionsInput">
+                    </div>
+                    <div id="CountExamples">
+                        <p>Количество примеров:</p>
                         <input style="margin-top: 3px;" type="text">
                     </div>
                     <div id="CountExamples">
-                        <!--?точка/запятая/слэш между вводом (10/2)-->
-                        <p>Количество примеров/вариантов:</p>
+                        <p>Количество вариантов:</p>
                         <input style="margin-top: 3px;" type="text">
                     </div>
                     <!-- todo кнопку исправить -->
                     <div id="Generation">
-                        <input type="submit" id="FullScreen" onclick="FullScreen(elem)"></input>
+                        <input type="button" value="Генерировать" onclick="FullScreen(elem)"></input>
                     </div>
                 </form>
             </div>
