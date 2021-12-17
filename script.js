@@ -18,6 +18,7 @@ window.onload = function () {
 
 
 function FullScreen(element) {
+
     if (element.requestFullscreen) {
         element.requestFullscreen();
     } else if (element.webkitrequestFullscreen) {
@@ -25,4 +26,8 @@ function FullScreen(element) {
     } else if (element.mozRequestFullscreen) {
         element.mozRequestFullScreen();
     }
+}
+
+function InputErrors() {
+    return 0
 }

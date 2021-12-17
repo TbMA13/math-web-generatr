@@ -1,8 +1,14 @@
 @font-face {
     font-family: Google_sans;
     src: url(fonts/GoogleSans-Regular.ttf);
+}
+
+@font-face {
     font-family: Google_sans_bold;
     src: url(fonts/GoogleSans-Bold.ttf);
+}
+
+@font-face {
     font-family: Google_sans_italic;
     src: url(fonts/GoogleSans-Italic.ttf);
 }
@@ -54,16 +60,29 @@ h3 {
 }
 
 #ChangeParameters {
-    margin: 3px 0 0 0;
+    margin: 5px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* background-color: burlywood; */
 }
 
+form {
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form div {
+    margin: 15px 0 0 0;
+}
+
+
 #ChangeNumbersSize {
-    height: 35px;
-    margin: 15px 0;
+
 
     display: flex;
     flex-direction: row;
@@ -74,31 +93,41 @@ h3 {
 
 }
 
-#ChangeNumbersSize input {
+form div input[type="text"] {
+    font-size: 20px;
     height: 28px;
     width: 70px;
     margin: 0 5px;
-
     padding: 0 7px;
-    
     color: #1B7513;
     background: rgba(124, 245, 113, 0.3);
 
     border-radius: 22px;
-    font-size: 20px;
+
     border: 2px solid #25DF14;
 }
 
-#ChangeNumbersSize input:focus {
+form div input[type="text"]:focus {
     background: rgba(124, 245, 113, 0.55);
     outline: none;
-    border: 3px solid #25DF14;
+    color: #1B7513;
+    border: 2px solid #25DF14;
 }
 
-#ChangeNumbersSize p {
-    font-size: 25px;
+input[type="checkbox"],
+label {
+    font-size: 21px;
+    cursor: pointer;
+}
+
+label {
+    margin: 0 3px 0 0;
 }
 
 #FullScreen {
     cursor: pointer;
+}
+
+input[type="button"]{
+    height: 30px;
 }

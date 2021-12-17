@@ -14,18 +14,38 @@
         <div id="block">
             <h1 id="HelloTitlle"></h1>
             <div id="ChangeParameters">
-                <h1>Выбор параметров генератора</h1>
+                <h2>Выбор параметров генератора</h2>
                 <form>
                     <div id="ChangeNumbersSize">
                         <p>Диапазон от</p>
-                        <input type="text">
+                        <input autofocus type="text">
                         <p>и до</p>
                         <input type="text">
                     </div>
                     <div id='ChangeActions'>
-
+                        <p>Допустимы следующие действия:</p>
+                        <input id="add" type="checkbox" class="Action">
+                        <label for="add">Сложение</label>
+                        <input id="sub" type="checkbox" class="Action">
+                        <label for="sub">Вычитание</label>
+                        <input id="multi" type="checkbox" class="Action">
+                        <label for="multi">Умножение</label>
+                        <input id="division" type="checkbox" class="Action">
+                        <label for="division">Деление</label>
                     </div>
-                    <!-- <input type="" id="FullScreen" onclick="FullScreen(elem)"></input> -->
+                    <div id="CountActions">
+                        <p>Количество действий в примерах:</p>
+                        <input style="margin-top: 3px;" type="text">
+                    </div>
+                    <div id="CountExamples">
+                        <!--?точка/запятая/слэш между вводом (10/2)-->
+                        <p>Количество примеров/вариантов:</p>
+                        <input style="margin-top: 3px;" type="text">
+                    </div>
+                    <!-- todo кнопку исправить -->
+                    <div id="Generation">
+                        <input type="submit" id="FullScreen" onclick="FullScreen(elem)"></input>
+                    </div>
                 </form>
             </div>
         </div>
