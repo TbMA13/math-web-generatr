@@ -16,9 +16,10 @@ window.onload = function () {
     }
 }
 
-
+//генерирование с проверкой корректности
 function FullScreen(element) {
-    if (ChangeNumbersSize() && ChangeActions) {
+    console.log('-----')
+    if (ChangeNumbersSize() && (!ChangeActions()) && ActionsCount() && ExamplesCount()) {
         if (element.requestFullscreen) {
             element.requestFullscreen();
         } else if (element.webkitrequestFullscreen) {
@@ -28,18 +29,57 @@ function FullScreen(element) {
         }
     }
 }
+//генерирование с проверкой корректности
 
-function MultiTable() {
 
-}
+//таблица умножения
+function MultiTable() {}
+//таблица умножения
 
+
+// проверка диапазона чисел
 function ChangeNumbersSize() {
-    if (((document.getElementById('FirstNumber').value) > (document.getElementById('LastNumber').value))){
-        console.log('Диапазон неверный')
+    let First = document.getElementById('FirstNumber').value; 
+    let Last = document.getElementById('LastNumber').value;
+    if (First > Last || First == '' || Last == '') {
+        console.log('Диапазон неверный');
     }
-    return ((document.getElementById('FirstNumber').value) <= (document.getElementById('LastNumber').value));
+    return (First <= Last);
 }
+// проверка диапазона чисел
+
+
+// проверка выбора действий 
 function ChangeActions() {
-    let temp = document.getElementsByClassName('Action')
-    console.log(temp)
+    let add = document.getElementById('add').checked;
+    let sub = document.getElementById('sub').checked;
+    let multi = document.getElementById('multi').checked;
+    let division = document.getElementById('division').checked;
+    if (add == sub == multi == division & add == false) {
+        console.log('Не выбраны действия')
+    }
+    return (add == sub == multi == division & add == false)
 }
+// проверка выбора действий 
+
+
+// проверка количества действий
+function ActionsCount() {
+    let ActionsCount = document.getElementById('CountActionsInput').value; 
+    if (ActionsCount < 1 || ActionsCount != Math.trunc(ActionsCount)) {
+        console.log('Неверное количество действий')
+    } 
+    return (ActionsCount >= 1 && ActionsCount == Math.trunc(ActionsCount));
+}
+// проверка количества действий
+
+
+// проверка количества примеров
+function ExamplesCount() {
+    let count = document.getElementById('CountExamples').value
+    if (count < 1 || Math.trunc(count) != count) {
+        console.log('Неверное количество примеров')
+    }
+    return count >= 1 && Math.trunc(count) == count
+}
+// проверка количества примеров
