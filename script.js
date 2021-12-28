@@ -18,8 +18,12 @@ window.onload = function () {
 
 //генерирование с проверкой корректности
 function FullScreen(element) {
+    let TempCount = 0
     console.log('-----')
-    if (ChangeNumbersSize() && (!ChangeActions()) && ActionsCount() && ExamplesCount()) {
+    if (ChangeNumbersSize) {
+        TempCount += 1
+    }
+    if (ChangeNumbersSize() && ((!ChangeActions()) && ActionsCount()) && ExamplesCount()) {
         if (element.requestFullscreen) {
             element.requestFullscreen();
         } else if (element.webkitrequestFullscreen) {
@@ -41,7 +45,7 @@ function MultiTable() {}
 function ChangeNumbersSize() {
     let First = document.getElementById('FirstNumber').value; 
     let Last = document.getElementById('LastNumber').value;
-    if (First > Last || First == '' || Last == '') {
+    if (First > Last || First == '' || Last == '' || First != Math.trunc(First) || Last != Math.trunc(Last)) {
         console.log('Диапазон неверный');
     }
     return (First <= Last);
@@ -66,7 +70,7 @@ function ChangeActions() {
 // проверка количества действий
 function ActionsCount() {
     let ActionsCount = document.getElementById('CountActionsInput').value; 
-    if (ActionsCount < 1 || ActionsCount != Math.trunc(ActionsCount)) {
+    if (ActionsCount < 1 || ActionsCount != Math.trunc(ActionsCount) || ActionsCount == '') {
         console.log('Неверное количество действий')
     } 
     return (ActionsCount >= 1 && ActionsCount == Math.trunc(ActionsCount));
