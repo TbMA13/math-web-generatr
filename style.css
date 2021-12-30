@@ -88,8 +88,6 @@ form div {
 
 
 #ChangeNumbersSize {
-
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -122,16 +120,29 @@ form div input[type="text"]:focus {
 
 input[type="checkbox"],
 label {
-    font-size: 21px;
+    font-size: 22px;
     cursor: pointer;
 }
 
 label {
-    margin: 0 3px 0 0;
+    padding: 0 5px;
+    /* margin: 0 9px 0 0; */
 }
 
 #FullScreen {
     cursor: pointer;
+}
+
+label.incorrectly {
+    background: #F57171 !important;
+    color: #891212 !important;
+    border-radius: 15px !important;
+}
+
+input[type='text'].incorrectly {
+    background: #F57171 !important;
+    border: 2px solid #DF1414 !important;
+    color: #891212 !important;
 }
 
 input[type="button"] {
@@ -150,3 +161,67 @@ input[type="button"]:hover {
     outline: none;
     color: black;
     border: 3px solid #25DF14;
+}
+
+#case {
+    width: 90%;
+    height: 92%;
+    border-radius: 90px;
+    background: #ffffff;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.HelloStudent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#caseBlock {
+    position: relative;
+    width: calc(100% - 90px);
+    height: calc(100% - 70px);
+}
+
+#HelloStudent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#HelloStudent h1{
+    font-size: 46px;
+}
+#HelloStudent h2{
+    font-size: 36px;
+}
+#HelloStudent h1,
+#HelloStudent h2 {
+    margin-bottom: 10px;
+}
+
+#HelloStudent input[type="text"] {
+    font-size: 23px;
+    height: 35px;
+    width: 200px;
+    margin: 0 5px;
+    padding: 0 7px;
+    color: #1B7513;
+    background: rgba(124, 245, 113, 0.3);
+
+    border-radius: 22px;
+
+    border: 2px solid #25DF14;
+}
+
+#HelloStudent input[type="text"]:focus {
+    background: rgba(124, 245, 113, 0.55);
+    outline: none;
+    color: #1B7513;
+    border: 2px solid #25DF14;
+}

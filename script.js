@@ -1,5 +1,13 @@
 const elem = document.documentElement;
 let correctly;
+var FirstNumber;
+let LastNumber;
+let add;
+let sub;
+let multi;
+let division;
+let actionsCount;
+let examplesCount;
 window.onload = function () {
     let data = new Date;
     let hours = data.getHours();
@@ -18,35 +26,64 @@ window.onload = function () {
 
 //генерирование с проверкой корректности
 function FullScreen(element) {
-    let TempCount = 0
+    let TempCount = 0;
     console.log('-----')
-    if (ChangeNumbersSize) {
+    if (ChangeNumbersSize()) {
         TempCount += 1
     }
-    if (ChangeNumbersSize() && ((!ChangeActions()) && ActionsCount()) && ExamplesCount()) {
+    if (ChangeActions()) {
+        TempCount += 1
+    }
+    if (ActionsCount()) {
+        TempCount += 1
+    }
+    if (ExamplesCount()) {
+        TempCount += 1
+    }
+    if (TempCount == 4) {
+        FirstNumber = document.getElementById('FirstNumber').value;
+        LastNumber = document.getElementById('LastNumber').value;
+        add = document.getElementById('add').checked;
+        sub = document.getElementById('sub').checked;
+        multi = document.getElementById('multi').checked;
+        division = document.getElementById('division').checked;
+        actionsCount = document.getElementById('CountActionsInput').value;
+        examplesCount = document.getElementById('CountExamples').value;
         if (element.requestFullscreen) {
             element.requestFullscreen();
         } else if (element.webkitrequestFullscreen) {
             element.webkitRequestFullscreen();
-        } else if (element.mozRequestFullscreen) {
-            element.mozRequestFullScreen();
         }
+        // else
+        // if (element.mozRequestFullscreen) {
+        //     element.mozRequestFullScreen();
+        // }
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('case').style.display = 'flex'
     }
 }
 //генерирование с проверкой корректности
 
 
 //таблица умножения
-function MultiTable() {}
+function MultiTable() {
+    // console.log(add);
+}
 //таблица умножения
 
 
 // проверка диапазона чисел
 function ChangeNumbersSize() {
-    let First = document.getElementById('FirstNumber').value; 
+    let First = document.getElementById('FirstNumber').value;
     let Last = document.getElementById('LastNumber').value;
+
+    document.getElementById('FirstNumber').classList = '';
+    document.getElementById('LastNumber').classList = '';
+
     if (First > Last || First == '' || Last == '' || First != Math.trunc(First) || Last != Math.trunc(Last)) {
-        console.log('Диапазон неверный');
+        document.getElementById('FirstNumber').classList.add('incorrectly');
+        document.getElementById('LastNumber').classList.add('incorrectly');
+        // console.log('Диапазон неверный');
     }
     return (First <= Last);
 }
@@ -59,20 +96,32 @@ function ChangeActions() {
     let sub = document.getElementById('sub').checked;
     let multi = document.getElementById('multi').checked;
     let division = document.getElementById('division').checked;
-    if (add == sub == multi == division & add == false) {
-        console.log('Не выбраны действия')
+
+    for (let label of document.getElementById('ChangeActions').getElementsByTagName('label')) {
+        label.classList = '';
     }
-    return (add == sub == multi == division & add == false)
+
+    if (add == sub == multi == division & add == false) {
+        for (let label of document.getElementById('ChangeActions').getElementsByTagName('label')) {
+            label.classList.add('incorrectly')
+        }
+        // console.log('Не выбраны действия')
+    }
+    return (!(add == sub == multi == division & add == false));
 }
 // проверка выбора действий 
 
 
 // проверка количества действий
 function ActionsCount() {
-    let ActionsCount = document.getElementById('CountActionsInput').value; 
+    let ActionsCount = document.getElementById('CountActionsInput').value;
+
+    document.getElementById('CountActionsInput').classList = '';
+
     if (ActionsCount < 1 || ActionsCount != Math.trunc(ActionsCount) || ActionsCount == '') {
-        console.log('Неверное количество действий')
-    } 
+        document.getElementById('CountActionsInput').classList.add('incorrectly')
+        // console.log('Неверное количество действий')
+    }
     return (ActionsCount >= 1 && ActionsCount == Math.trunc(ActionsCount));
 }
 // проверка количества действий
@@ -80,10 +129,13 @@ function ActionsCount() {
 
 // проверка количества примеров
 function ExamplesCount() {
-    let count = document.getElementById('CountExamples').value
+    let count = document.getElementById('CountExamples').value;
+    document.getElementById('CountExamples').classList = '';
     if (count < 1 || Math.trunc(count) != count) {
-        console.log('Неверное количество примеров')
+        document.getElementById('CountExamples').classList.add('incorrectly')
+        // console.log('Неверное количество примеров')
     }
-    return count >= 1 && Math.trunc(count) == count
+    return (count >= 1 && Math.trunc(count) == count);
 }
 // проверка количества примеров
+
