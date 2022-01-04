@@ -8,17 +8,18 @@ let multi;
 let division;
 let actionsCount;
 let examplesCount;
+let studentName;
 window.onload = function () {
     let data = new Date;
     let hours = data.getHours();
     let helloText = document.getElementById("HelloTitlle");
 
-    if (4 <= (hours) & (hours) <= 8) {
+    if (4 <= (hours) && (hours) <= 8) {
         helloText.innerHTML = 'Доброе утро!';
-    } else if (9 <= hours & hours <= 17) {
+    } else if (9 <= hours && hours <= 17) {
         helloText.innerHTML = 'Добрый день!';
-    } else if (18 <= hours & hours <= 22) {
-        helloText.innerHTML = 'Добрый день!';
+    } else if (18 <= hours && hours <= 22) {
+        helloText.innerHTML = 'Добрый вечер!';
     } else if (23 <= hours || hours <= 3 || hours == 0) {
         helloText.innerHTML = 'Доброй ночи!';
     }
@@ -27,7 +28,7 @@ window.onload = function () {
 //генерирование с проверкой корректности
 function FullScreen(element) {
     let TempCount = 0;
-    console.log('-----')
+    // console.log('-----')
     if (ChangeNumbersSize()) {
         TempCount += 1
     }
@@ -65,22 +66,15 @@ function FullScreen(element) {
 //генерирование с проверкой корректности
 
 
-//таблица умножения
-function MultiTable() {
-    // console.log(add);
-}
-//таблица умножения
-
-
 // проверка диапазона чисел
 function ChangeNumbersSize() {
-    let First = document.getElementById('FirstNumber').value;
-    let Last = document.getElementById('LastNumber').value;
+    let First = Number(document.getElementById('FirstNumber').value);
+    let Last = Number(document.getElementById('LastNumber').value);
 
     document.getElementById('FirstNumber').classList = '';
     document.getElementById('LastNumber').classList = '';
 
-    if (First > Last || First == '' || Last == '' || First != Math.trunc(First) || Last != Math.trunc(Last)) {
+    if (First == '' || Last == '' || First > Last) {
         document.getElementById('FirstNumber').classList.add('incorrectly');
         document.getElementById('LastNumber').classList.add('incorrectly');
         // console.log('Диапазон неверный');
@@ -139,3 +133,26 @@ function ExamplesCount() {
 }
 // проверка количества примеров
 
+
+//таблица умножения
+function MultiTable() {
+
+}
+//таблица умножения
+
+// Вывод примеров
+function ExamplesStart() {
+    studentName = document.getElementById('StudentNameInput').value;
+    if (document.getElementById('StudentName').value != '') {
+        document.getElementById('HelloStudent').style.display = 'none';
+        document.getElementById('ExamplesBlock').style.display = 'flex';
+        document.getElementById('StudentName').innerText = studentName;
+    }
+}
+// Вывод примеров
+
+// Генерация примеров
+function ExamplesGeneration() {
+
+}
+// Генерация примеров

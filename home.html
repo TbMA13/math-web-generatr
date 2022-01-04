@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="container">
+    <div style="display: none;" id="container">
         <div id="block">
             <h1 id="HelloTitlle"></h1>
             <input id="MultiTable" type="button" value="Таблица умножения"></input>
@@ -53,21 +53,34 @@
             </div>
         </div>
     </div>
-    <div style="display: none;" id='case'>
-        <div id="caseBlock" class="HelloStudent">
+    <div id='case'>
+        <div style="display: none;" id="caseBlock" class="HelloStudent">
             <div id="HelloStudent">
                 <h1>Привет, ученик!</h1>
                 <h2>Как тебя зовут?</h2>
                 <div>
-                    <input placeholder="Фамилия Имя" type="text" id="StudentName">
-                    <input type="button" value="Дальше">
+                    <input autocomplete="off" placeholder="Фамилия Имя" type="text" id="StudentNameInput">
+                    <input onclick="ExamplesStart()" type="button" value="Дальше">
                 </div>
             </div>
         </div>
-    </div>
-    <div id="Examples">
-        <div id="examplesBlock">
-            
+        <div id="ExamplesBlock">
+            <div id="statusBar">
+                <h2>Пример № <span id='ExampleNumber'>3</span></h2>
+                <h2>Осталось <span id="remainder">2</span></h2>
+                <h2 id="StudentName">Саркисов Кирилл</h2>
+            </div>
+            <div id="exampleBody">
+                <p>Запиши ответ:</p>
+                <div id="ExampleDiv">
+                    <p id="Example">23 + 2 = </p>
+                    <input id="ExampleInput" type="text">
+                    <input id="NextExample" type="button" value="Дальше">
+                </div>
+            </div>
+            <div id="progress">
+                <div id="realProgress"></div>
+            </div>
         </div>
     </div>
 </body>
