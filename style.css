@@ -13,10 +13,6 @@
     src: url(fonts/GoogleSans-Italic.ttf);
 }
 
-span {
-    font-family: Google_sans_italic !important;
-}
-
 * {
     font-family: Google_sans, Arial, Helvetica, sans-serif;
     border: 0;
@@ -135,8 +131,8 @@ label {
 }
 
 label {
+    border-radius: 22px;
     padding: 0 5px;
-    /* margin: 0 9px 0 0; */
 }
 
 #FullScreen {
@@ -144,7 +140,7 @@ label {
 }
 
 label.incorrectly {
-    background: #F57171 !important;
+    background-color: #F57171 !important;
     color: #891212 !important;
     border-radius: 15px !important;
 }
@@ -310,7 +306,7 @@ input[type="button"]:hover {
     border-radius: 22px;
 }
 
-#ExampleInput:focus{
+#ExampleInput:focus {
     padding: 0px 7px;
     transition: border 0.2s, padding 0.2s;
     border: 3px solid #25DF14;
@@ -335,12 +331,52 @@ input[type="button"]:hover {
     padding: 2px 10px;
     color: black;
 }
-#NextExample:focus{
+
+#NextExample:focus {
     outline: none;
-    background-color:  rgba(124, 245, 113, 0.5);
-    transition: color 0.4s, background-color 0.4s, border 0.2s;
-    border: 5px solid #25DF14;
-    width: 200px;
-    padding: 2px 10px;
-    color: black;
+}
+
+input,
+label {
+    transition: background-color .4s, color .4s;
+}
+
+#AnswersBlock {
+    width: 100%;
+    height: 100%;
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#AnswersBlock div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: relative;
+    width: 90%;
+    height: auto;
+}
+#StudentName2{
+    margin: 30px 0 10px 0;
+}
+#AnswersBlock div p{
+    font-size: 30px;
+    text-align: center;
+}
+.Number {
+    width: 5%;
+}
+.ExamplesList {
+    width: 45%;
+}
+.UserAnswer{
+    width: 20%;
+}
+.CorrectAnswer {
+    width: 20%;
 }

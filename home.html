@@ -3,14 +3,15 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Математический генератор</title>
 </head>
 
-<body>
-    <div style="display: none;" id="container">
+<body id="body">
+    <div id="container">
         <div id="block">
             <h1 id="HelloTitlle"></h1>
             <input id="MultiTable" type="button" value="Таблица умножения"></input>
@@ -53,8 +54,8 @@
             </div>
         </div>
     </div>
-    <div id='case'>
-        <div style="display: none;" id="caseBlock" class="HelloStudent">
+    <div style="display: none;" id='case'>
+        <div id="caseBlock" class="HelloStudent">
             <div id="HelloStudent">
                 <h1>Привет, ученик!</h1>
                 <h2>Как тебя зовут?</h2>
@@ -64,22 +65,31 @@
                 </div>
             </div>
         </div>
-        <div id="ExamplesBlock">
+        <div style="display: none;" id="ExamplesBlock">
             <div id="statusBar">
-                <h2>Пример № <span id='ExampleNumber'>3</span></h2>
+                <h2>Пример № <span id='ExampleNumber'>1</span></h2>
                 <h2>Осталось <span id="remainder">2</span></h2>
-                <h2 id="StudentName">Саркисов Кирилл</h2>
+                <h2 id="StudentName"></h2>
             </div>
             <div id="exampleBody">
                 <p>Запиши ответ:</p>
                 <div id="ExampleDiv">
-                    <p id="Example">23 + 2 = </p>
-                    <input id="ExampleInput" type="text">
-                    <input id="NextExample" type="button" value="Дальше">
+                    <p id="Example"></p>
+                    <input autocomplete="off" id="ExampleInput" type="text">
+                    <input onclick="NextExample()" id="NextExample" type="button" value="Дальше">
                 </div>
             </div>
             <div id="progress">
                 <div id="realProgress"></div>
+            </div>
+        </div>
+        <div style="display: none;" id="AnswersBlock">
+            <h1 id="StudentName2"></h1>
+            <div>
+                <p class="Number">№</p>
+                <p class="ExamplesList">Пример</p>
+                <p class="UserAnswer">Ответ ученика</p>
+                <p class="CorrectAnswer">Правильный ответ</p>
             </div>
         </div>
     </div>
