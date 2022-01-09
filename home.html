@@ -14,7 +14,6 @@
     <div id="container">
         <div id="block">
             <h1 id="HelloTitlle"></h1>
-            <input id="MultiTable" type="button" value="Таблица умножения"></input>
             <div id="ChangeParameters">
                 <h2>Выбор параметров генератора</h2>
                 <form>
@@ -43,9 +42,9 @@
                         <p>Количество примеров:</p>
                         <input autocomplete="off" id="CountExamples" style="margin-top: 3px;" type="text">
                     </div>
-                    <div id="CountExamples">
+                    <div id="CountExamplesDiv2">
                         <p>Количество вариантов:</p>
-                        <input autocomplete="off" style="margin-top: 3px;" type="text">
+                        <input id="versionCount" autocomplete="off" style="margin-top: 3px;" type="text">
                     </div>
                     <div id="Generation">
                         <input type="button" value="Генерировать" onclick="FullScreen(elem)"></input>
@@ -90,6 +89,14 @@
                 <p class="ExamplesList">Пример</p>
                 <p class="UserAnswer">Ответ ученика</p>
                 <p class="CorrectAnswer">Правильный ответ</p>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="containerToPrint">
+        <div id='printExamples'>
+        </div>
+        <div id="printAnswers">
+            <div class="printBlocksAnswers">
             </div>
         </div>
     </div>
