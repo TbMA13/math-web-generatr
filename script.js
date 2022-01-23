@@ -1,3 +1,4 @@
+//TODO добавить сохранение параметров
 const elem = document.documentElement;
 let FirstNumber = new Number();
 let LastNumber = new Number();
@@ -225,7 +226,7 @@ function AnswersView() {
 
 // !Генерация примеров
 function ExamplesGeneration() {
-    for (let i = 1; i <= examplesCount; i++) {
+    while (Examples.length < examplesCount) {
         document.getElementById('ExampleNumber').innerText = 1;
         let tempExample = '';
         let tempExampleMath = '';
@@ -320,10 +321,10 @@ function ExamplesGeneration() {
             tempExample += tempNumber;
             tempExampleMath += tempNumber;
         }
-
-        Examples.push(tempExample);
-        Answers.push(eval(tempExampleMath));
-
+        if ((FirstNumber >= 0 && eval(tempExampleMath) >= 0) || FirstNumber < 0) {
+            Examples.push(tempExample);
+            Answers.push(eval(tempExampleMath));
+        }
     }
 }
 
